@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		title weatherr | simple weather
+		link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css')
+		link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css')
+		link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet' href='/css/style.css')
+	body
+		if !weatherData
+			#loader
+				h1.display-4
+					i.fa.fa-circle-o-notch.fa-spin.npmfa-fw
+		else
+			main
+				p= weatherData
+
+		script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+		script(src='/js/locate.js')
