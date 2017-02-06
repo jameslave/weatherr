@@ -1,30 +1,38 @@
-function getLocation(_callback) {
+function get(_callback) {
+	// returns userLocation as String(lat, long)
 	var userLocation
-	var urlPath = window.location.pathname
+
+	// possibly a future feature
+	/*var urlPath = window.location.pathname
 	var urlLocation = urlPath.substr(urlPath.lastIndexOf('/') + 1)
 
 	if (/^\d{5}$/.test(urlLocation)) {
 		userLocation = urlLocation
 		_callback(userLocation)
-	} else if (navigator.geolocation) {
+	} else */
+
+	// try to get location from the browser
+	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(p) {
 			userLocation = p.coords.latitude.toString() + ',' + p.coords.longitude.toString()
 			_callback(userLocation)
 		})
 	} else {
-		$.get('http://ipinfo.io/json', function(json) {
+		// otherwise make a call to ipinfo.io
+		$.get('//ipinfo.io/json', function(json) {
 			userLocation = json.loc
 			_callback(userLocation)
 		})
 	}
 }
 
-function sendLocation(location) {
+function send(location) {
+	// POST user's location to the server
 	$.post('/', {location: location}, function(res) {
 		console.log(res)
 	})
 }
 
-getLocation(function(location) {
-	sendLocation(location)
+get(function(location) {
+	send(location)
 })
