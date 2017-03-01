@@ -1,20 +1,17 @@
 require('dotenv').config()
 
 let express = require('express'),
-		compression = require('compression'),
-		app = module.exports = express()
-
-app.locals = require('./app-info')
+	compression = require('compression'),
+	app = express()
 
 app.set('views', './views')
 app.set('view engine', 'pug')
 
 app.use(compression())
-app.use(express.static('build'))
+app.use(express.static('dist'))
 
-//app.use('/', require('./routes/index'))
 app.get('/', (req, res) =>
-	res.render('index', app.locals)
+	res.render('index')
 )
 
 app.listen(process.env.PORT || 3000)
