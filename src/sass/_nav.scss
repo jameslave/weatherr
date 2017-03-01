@@ -1,0 +1,17 @@
+nav {
+	background-color: $gray;
+	display: flex;
+	height: 60px;
+	padding: 0 2rem;
+
+	align-items: center;
+	justify-content: space-between;
+}
+
+#settings-icon {
+	margin-left: 1.5rem;
+}
+
+.nav-icon {
+	width: 1.75em;
+}

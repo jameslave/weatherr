@@ -1,26 +1,20 @@
 require('dotenv').config()
 
-var express = require('express')
-var compression = require('compression')
-var sass = require('node-sass-middleware')
-var bodyParser = require('body-parser')
+let express = require('express'),
+		compression = require('compression'),
+		app = module.exports = express()
 
-var app = module.exports = express()
+app.locals = require('./app-info')
 
 app.set('views', './views')
 app.set('view engine', 'pug')
 
 app.use(compression())
-app.use(sass({
-	src: __dirname + '/scss',
-	dest: __dirname + '/public/css',
-	outputStyle: 'compressed',
-	prefix: '/css'
-}))
-app.use(express.static('public'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static('build'))
 
-app.use('/', require('./routes/index'))
+//app.use('/', require('./routes/index'))
+app.get('/', (req, res) =>
+	res.render('index', app.locals)
+)
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)

@@ -1,21 +1,36 @@
 doctype html
 html
 	head
+		title weatherr
 		meta(charset='utf-8')
 		meta(name='viewport' content='width=device-width, initial-scale=1.0')
-		title weatherr | simple weather
-		link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
-		link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css')
-		link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-		link(rel='stylesheet' href='/css/style.css')
-	body
-		if !weatherData
-			#loader
-				h1.display-4
-					i.fa.fa-circle-o-notch.fa-spin.npmfa-fw
-		else
-			main
-				p= weatherData
+		link(rel='author' content='James Lave' href='https://heyjam.es')
+		link(rel='stylesheet' href='/css/styles.css')
 
-		script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-		script(src='/js/locate.js')
+	body
+		nav
+			#brand-wrapper
+				img#brand-icon
+				|weatherr
+			#nav-btn-wrapper
+				img#refresh-icon.nav-icon(src='/img/refresh.png')
+				img#settings-icon.nav-icon(src='/img/settings.png')
+
+		main
+			#weather-wrapper
+				#location.weather-item Chicago, IL
+				#temp-cond-wrapper.weather-item
+					#temp 72 °F
+					#cond-icon-wrapper
+						img#cond-icon(src='/img/sunny.png')
+				#forecast-text.weather-item Over the next 8 hours...
+				#forecast-wrapper.weather-item
+					#forecast-temp-wrapper.forecast-item
+						img#forecast-temp-icon.forecast-icon(src='/img/temperature.png')
+						|It's going to get cooler.
+					#forecast-wind-wrapper.forecast-item
+						img#forecast-wind-icon.forecast-icon(src='/img/wind.png')
+						|It's going to get windier.
+					#forecast-precip-wrapper.forecast-item
+						img#forecast-precip-icon.forecast-icon(src='/img/raindrops.png')
+						|It's going to stay dry.
