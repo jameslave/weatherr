@@ -2,10 +2,11 @@ doctype html
 html
 	head
 		title weatherr
+		base(href='/weatherr/')
 		meta(charset='utf-8')
 		meta(name='viewport' content='width=device-width, initial-scale=1.0')
 		link(rel='author' content='James Lave' href='https://heyjam.es')
-		link(rel='stylesheet' href='/css/styles.css')
+		link(rel='stylesheet' href='css/styles.css')
 
 	body
 		nav
@@ -13,8 +14,8 @@ html
 				img#brand-icon
 				|weatherr
 			#nav-btn-wrapper
-				img#refresh-icon.nav-icon(src='/img/refresh.png')
-				img#settings-icon.nav-icon(src='/img/settings.png')
+				img#refresh-icon.nav-icon(src='img/refresh.png')
+				img#settings-icon.nav-icon(src='img/settings.png')
 
 		main
 			#weather-wrapper
@@ -22,15 +23,15 @@ html
 				#temp-cond-wrapper.weather-item
 					#temp 72 °F
 					#cond-icon-wrapper
-						img#cond-icon(src='/img/sunny.png')
+						img#cond-icon(src='img/sunny.png')
 				#forecast-text.weather-item Over the next 8 hours...
 				#forecast-wrapper.weather-item
 					#forecast-temp-wrapper.forecast-item
-						img#forecast-temp-icon.forecast-icon(src='/img/temperature.png')
+						img#forecast-temp-icon.forecast-icon(src='img/temperature.png')
 						|It's going to get cooler.
 					#forecast-wind-wrapper.forecast-item
-						img#forecast-wind-icon.forecast-icon(src='/img/wind.png')
+						img#forecast-wind-icon.forecast-icon(src='img/wind.png')
 						|It's going to get windier.
 					#forecast-precip-wrapper.forecast-item
-						img#forecast-precip-icon.forecast-icon(src='/img/raindrops.png')
+						img#forecast-precip-icon.forecast-icon(src='img/raindrops.png')
 						|It's going to stay dry.

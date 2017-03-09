@@ -1,7 +1,7 @@
 {
   "name": "weatherr",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "repository": "https://github.com/jlave2/weatherr.git",
   "author": "James Lave",
   "license": "MIT",
