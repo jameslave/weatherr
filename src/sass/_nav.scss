@@ -7,9 +7,12 @@ nav {
 	align-items: center;
 	justify-content: space-between;
 
+	#brand-wrapper {
+		font-size: 1.1em;
+	}
+
 	#nav-btn-wrapper {
 		.nav-icon {
-			// width: 1.75em;
 			font-size: 1.25em;
 		}
 		#settings-icon {

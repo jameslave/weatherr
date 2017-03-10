@@ -1,6 +1,6 @@
 let request = require('request')
 
-exports.getJSON = function(coordsObj) {
+exports.getJSON = (coordsObj) => {
 	let coords = coordsObj.lat.toString() + ',' + coordsObj.lon.toString()
 
 	let apiUrl = 'http://api.wunderground.com/api/'

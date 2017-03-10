@@ -1,4 +1,4 @@
-// helper function to check if letiable is in range
+// helper function to check if variable is in range
 function between(letiable, x0, x1) {
 	return letiable >= x0 && letiable < x1
 }
@@ -33,16 +33,12 @@ function formatTemp(json, hoursAhead) {
 	let futureDesc = (function(diff) {
 		if (diff > 8) return 'get much warmer'
 		if (diff > 3) return 'get warmer'
-		if (Math.abs(diff) <= 3) return 'remain ' + currentDesc
+		if (Math.abs(diff) <= 3) return 'stay ' + currentDesc
 		if (diff < -3) return 'get cooler'
 		return 'get much cooler'
 	})(tempDiff)
 
-	let concatTemp = 'It\'s '
-	concatTemp += currentDesc
-	concatTemp += ' right now, '
-	concatTemp += futureDesc.match(/^remain/g) ? 'and ' : 'but '
-	concatTemp += 'it\'s going to '
+	let concatTemp = 'It\'s going to '
 	concatTemp += futureDesc
 	concatTemp += '.'
 
@@ -68,16 +64,12 @@ function formatWind(json, hoursAhead) {
 	let futureDesc = (function(diff) {
 		if (diff > 10.0) return 'get much windier'
 		if (diff > 5.0) return 'get windier'
-		if (Math.abs(diff) <= 5.0) return 'remain ' + currentDesc
+		if (Math.abs(diff) <= 5.0) return 'stay ' + currentDesc
 		if (diff < -5.0) return 'get calmer'
 		return 'get much calmer'
 	})(windDiff)
 
-	let concatWind = 'It\'s '
-	concatWind += currentDesc
-	concatWind += ' right now, '
-	concatWind += futureDesc.match(/^remain/g) ? 'and ' : 'but '
-	concatWind += 'it\'s going to '
+	let concatWind = 'It\'s going to '
 	concatWind += futureDesc
 	concatWind += '.'
 
@@ -109,12 +101,7 @@ function formatPrecip(json, hoursAhead) {
 		maxForecastCode++
 	}
 
-	let currentDesc
 	let icon = json.current_observation.icon
-
-	if ( icon.match(/rain|sleet|storm/g) ) currentDesc = 'rainy'
-	else if ( icon.match(/snow|flurries/g) ) currentDesc = 'snowy'
-	else currentDesc = 'dry'
 
 	let futureDesc = (function(prob) {
 		if (prob >= 80.0) return 'It will be wet'
@@ -123,21 +110,18 @@ function formatPrecip(json, hoursAhead) {
 		return 'It will be dry'
 	})(maxPrecipProb)
 
-	let concatPrecip = 'It\'s '
-	concatPrecip += currentDesc
-	concatPrecip += ' right now. '
-	concatPrecip += futureDesc
-	concatPrecip += ' later.'
+	let concatPrecip = futureDesc
+	concatPrecip += '.'
 
 	return concatPrecip
 }
 
-exports.getWeather = function(json, hoursAhead) {
-	return new Promise((resolve, reject) => {
+exports.getData = function(json, hoursAhead) {
+	return new Promise((resolve) => {
 		let weatherData = {}
 		weatherData.loc = json.current_observation.display_location.city
-		weatherData.tempF = json.current_observation.feelslike_f
-		weatherData.tempC = json.current_observation.feelslike_c
+		weatherData.f = json.current_observation.feelslike_f
+		weatherData.c = json.current_observation.feelslike_c
 		weatherData.tempStr = formatTemp(json, hoursAhead)
 		weatherData.windStr = formatWind(json, hoursAhead)
 		weatherData.precipStr = formatPrecip(json, hoursAhead)

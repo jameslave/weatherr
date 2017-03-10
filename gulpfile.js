@@ -20,11 +20,11 @@ const paths = {
 
 gulp.task('js', () => {
 	gulp.src('src/js/main.js')
-		.pipe(sourcemaps.init())
+		// .pipe(sourcemaps.init())
 		.pipe(browserify())
 		.pipe(babel({presets: ['es2015']}))
 		.pipe(uglify())
-		.pipe(sourcemaps.write())
+		// .pipe(sourcemaps.write())
 		.pipe(gulp.dest('dist'))
 })
 

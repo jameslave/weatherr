@@ -20,19 +20,19 @@ html
 		main
 			#weather-wrapper
 				#current-wrapper
-					#location.weather-item Chicago
+					#location.weather-item <!--location goes here-->
 					img#current-icon.weather-item(src='img/icons/sunny.png')
-					#temp.weather-item 72 °F
-				#forecast-text.weather-item Over the next 8 hours...
+					#temp.weather-item <!--temp goes here-->
+				#forecast-text.weather-item Over the next #[span#forecast-hours] hours...
 				#forecast-wrapper.weather-item
 					#forecast-temp-wrapper.forecast-item
 						img#forecast-temp-icon.forecast-icon(src='img/icons/temperature.png')
-						|It's going to get cooler.
+						span#forecast-temp-text <!--temp forecast goes here-->
 					#forecast-wind-wrapper.forecast-item
 						img#forecast-wind-icon.forecast-icon(src='img/icons/wind.png')
-						|It's going to get windier.
+						span#forecast-wind-text  <!--wind forecast goes here-->
 					#forecast-precip-wrapper.forecast-item
 						img#forecast-precip-icon.forecast-icon(src='img/icons/raindrops.png')
-						|It's going to stay dry.
+						span#forecast-precip-text  <!--precip forecast goes here-->
 
 		script(src='main.js')
