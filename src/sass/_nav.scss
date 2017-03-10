@@ -1,17 +1,23 @@
 nav {
-	background-color: #2e2e2e;
+	background-color: $nav-color;
 	display: flex;
-	height: 60px;
-	padding: 0 2rem;
+	height: $nav-height;
+	padding: 0 24em;
 
 	align-items: center;
 	justify-content: space-between;
+
+	#nav-btn-wrapper {
+		.nav-icon {
+			// width: 1.75em;
+			font-size: 1.25em;
+		}
+		#settings-icon {
+			margin-left: 0.5em;
+		}
+	}
 }
 
-#settings-icon {
-	margin-left: 1.5rem;
-}
 
-.nav-icon {
-	width: 1.75em;
-}
+
+
