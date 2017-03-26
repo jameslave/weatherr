@@ -1,5 +1,4 @@
 main {
-	background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('img/backgrounds/1.jpg') no-repeat center center;
 	background-size: cover;
 	display: flex;
 	// height: calc(100vh - #{$nav-height});
@@ -14,7 +13,7 @@ main {
 	justify-content: center;
 
 	#weather-wrapper {
-		background-color: rgba(132, 132, 132, 0.1);
+		// background-color: rgba(132, 132, 132, 0.1);
 		border-radius: 1rem;
 		padding: 2rem;
 
@@ -44,7 +43,7 @@ main {
 		}
 
 		#forecast-text {
-			border-top: 1px solid #aaa;
+			// border-top: 1px solid #aaa;
 			font-size: 1.5em;
 			text-align: center;
 		}

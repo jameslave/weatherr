@@ -1,12 +1,12 @@
 {
   "name": "weatherr",
   "version": "0.0.0",
-  "main": "main.js",
+  "main": "index.js",
   "repository": "https://github.com/jlave2/weatherr.git",
   "author": "James Lave",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon main.js"
+    "dev": "nodemon index.js"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.22.0",
@@ -14,11 +14,12 @@
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
     "gulp-browserify": "^0.5.1",
-    "gulp-clean-css": "^3.0.3",
-    "gulp-concat": "^2.6.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.0.4",
     "gulp-imagemin": "^3.1.1",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.1.0",
+    "gulp-uglify": "^2.1.2",
+    "node-sass": "^4.5.0",
     "nodemon": "^1.11.0",
     "normalize-scss": "^6.0.0"
   },

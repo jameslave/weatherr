@@ -1,6 +1,16 @@
-/*
-	 Animation example, for spinners
-*/
+.animate-fade {
+	animation: fade 1s forwards linear;
+}
+
+@keyframes fade {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
 .animate-spin {
 	-webkit-animation: spin 2s infinite linear;
 	-moz-animation: spin 2s infinite linear;

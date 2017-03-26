@@ -1,26 +1,75 @@
 nav {
-	background-color: $nav-color;
-	display: flex;
-	height: $nav-height;
-	padding: 0 24em;
+  background-color: $nav-color;
+  height: $nav-height;
+  padding: 0 2em;
+  z-index: 1;
 
-	align-items: center;
-	justify-content: space-between;
+  i {
+    cursor: pointer;
+  }
 
-	#brand-wrapper {
-		font-size: 1.1em;
-	}
+  #nav-wrapper {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 
-	#nav-btn-wrapper {
-		.nav-icon {
-			font-size: 1.25em;
-		}
-		#settings-icon {
-			margin-left: 0.5em;
-		}
-	}
+    @media (min-width: 768px) {
+      width: 75%;
+    }
+    @media (min-width: 1024px) {
+      width: 50%;
+    }
+
+    #brand-wrapper {
+      font-size: 1.1em;
+    }
+
+    #nav-btn-wrapper {
+      .nav-icon {
+        font-size: 1.25em;
+        text-align: center;
+      }
+      #settings-icon {
+        margin-left: 0.5em;
+      }
+    }
+  }
 }
 
+.visible {
+  height: 80px
+}
 
+#settings-menu {
+  background-color: red;
+  border-radius: 0 0 5px 5px;
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: $nav-height;
+  width: 100px;
 
+  #temp-toggle {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    // visibility: hidden;
 
+    .selected {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .toggle-item {
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 0.5em;
+      text-shadow: none;
+    }
+  }
+}

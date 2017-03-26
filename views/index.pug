@@ -1,38 +1,47 @@
 doctype html
 html
-	head
-		title weatherr
-		//- base(href='/weatherr/')
-		meta(charset='utf-8')
-		meta(name='viewport' content='width=device-width, initial-scale=1.0')
-		link(rel='author' content='James Lave' href='https://heyjam.es')
-		link(rel='stylesheet' href='styles.css')
+  head
+    title weatherr
+    //- base(href='/weatherr/')
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='author' content='James Lave' href='https://heyjam.es')
+    link(rel='stylesheet' href='styles.css')
 
-	body
-		nav
-			#brand-wrapper
-				img#brand-icon
-				|weatherr
-			#nav-btn-wrapper
-				i#refresh-icon.nav-icon.icon-arrows-cw
-				i#settings-icon.nav-icon.icon-sliders
+  body
+    #loading-screen
+      i#loading-icon.icon-spinner.animate-spin
 
-		main
-			#weather-wrapper
-				#current-wrapper
-					#location.weather-item <!--location goes here-->
-					img#current-icon.weather-item(src='img/icons/sunny.png')
-					#temp.weather-item <!--temp goes here-->
-				#forecast-text.weather-item Over the next #[span#forecast-hours] hours...
-				#forecast-wrapper.weather-item
-					#forecast-temp-wrapper.forecast-item
-						img#forecast-temp-icon.forecast-icon(src='img/icons/temperature.png')
-						span#forecast-temp-text <!--temp forecast goes here-->
-					#forecast-wind-wrapper.forecast-item
-						img#forecast-wind-icon.forecast-icon(src='img/icons/wind.png')
-						span#forecast-wind-text  <!--wind forecast goes here-->
-					#forecast-precip-wrapper.forecast-item
-						img#forecast-precip-icon.forecast-icon(src='img/icons/raindrops.png')
-						span#forecast-precip-text  <!--precip forecast goes here-->
+    nav
+      #nav-wrapper
+        #brand-wrapper
+          img#brand-icon
+          |weatherr
+        #nav-btn-wrapper
+          i#refresh-icon.nav-icon.icon-arrows-cw.hidden
+          i#settings-icon.nav-icon.icon-sliders
+    #settings-menu
+      #temp-toggle
+        .toggle-item.selected &deg;F
+        .toggle-item &deg;C
 
-		script(src='main.js')
+    main
+      #weather-wrapper
+        #current-wrapper
+          #location.weather-item <!--location goes here-->
+          img#current-icon.weather-item
+          #temp.weather-item <!--temp goes here-->
+        #forecast-text.weather-item Over the next #[span#forecast-hours] hours...
+        #forecast-wrapper.weather-item
+          #forecast-temp-wrapper.forecast-item
+            img#forecast-temp-icon.forecast-icon(src='img/icons/temp.svg')
+            span#forecast-temp-text <!--temp forecast goes here-->
+          #forecast-wind-wrapper.forecast-item
+            img#forecast-wind-icon.forecast-icon(src='img/icons/wind.svg')
+            span#forecast-wind-text <!--wind forecast goes here-->
+          #forecast-precip-wrapper.forecast-item
+            img#forecast-precip-icon.forecast-icon(src='img/icons/precip.svg')
+            span#forecast-precip-text <!--precip forecast goes here-->
+
+    script(src='main.js')
+

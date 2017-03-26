@@ -1,14 +1,14 @@
-let express = require('express'),
-	router = module.exports = express.Router(),
-	scrape = require('../helpers/scrape')
+let express = require('express')
+let router = module.exports = express.Router()
+let scrape = require('../helpers/scrape')
 
 // GET /
 router.get('/', (req, res) =>
-	res.render('index')
+  res.render('index')
 )
 
 // POST /
 router.post('/location', (req, res) => {
-	scrape.getJSON(req.body)
-		.then(json => res.send(JSON.stringify(json)))
+  scrape.getJSON(req.body)
+    .then(json => res.send(JSON.stringify(json)))
 })
