@@ -22,8 +22,8 @@ html
           i#settings-icon.nav-icon.icon-sliders
     #settings-menu
       #temp-toggle
-        .toggle-item.selected &deg;F
-        .toggle-item &deg;C
+        .toggle-item(data-units='f') &deg;F
+        .toggle-item(data-units='c') &deg;C
 
     main
       #weather-wrapper
@@ -43,5 +43,6 @@ html
             img#forecast-precip-icon.forecast-icon(src='img/icons/precip.svg')
             span#forecast-precip-text <!--precip forecast goes here-->
 
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     script(src='main.js')
 

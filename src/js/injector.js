@@ -38,6 +38,7 @@ function setIcon (data) {
 
 exports.inject = (data, hoursAhead) => {
   return new Promise(resolve => {
+    window.weather = data
     setLocation(data)
     setIcon(data)
     setTemp(data)

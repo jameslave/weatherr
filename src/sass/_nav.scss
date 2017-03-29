@@ -45,20 +45,19 @@ nav {
 }
 
 #settings-menu {
-  background-color: red;
+  background-color: $nav-color;
   border-radius: 0 0 5px 5px;
-  height: 0;
+  max-height: 0;
   position: absolute;
-  right: 0;
   top: $nav-height;
-  width: 100px;
+  width: auto;
 
   #temp-toggle {
     align-items: center;
     display: flex;
     justify-content: center;
     padding: 1em;
-    // visibility: hidden;
+    opacity: 0;
 
     .selected {
       background-color: #fff;

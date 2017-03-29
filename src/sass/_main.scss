@@ -1,7 +1,6 @@
 main {
 	background-size: cover;
 	display: flex;
-	// height: calc(100vh - #{$nav-height});
 	height: 100vh;
 	left: 0;
 	position: absolute;
@@ -13,7 +12,6 @@ main {
 	justify-content: center;
 
 	#weather-wrapper {
-		// background-color: rgba(132, 132, 132, 0.1);
 		border-radius: 1rem;
 		padding: 2rem;
 
