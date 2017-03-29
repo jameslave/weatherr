@@ -38,7 +38,7 @@ $toggleItems.on('click', (e) => {
   }
 })
 
-/* function definitions */
+// - function definitions
 
 function settingsAreVisible () {
   return $settingsMenu.css('max-height') !== '0px'
