@@ -1,3 +1,5 @@
+/* global XMLHttpRequest */
+
 exports.get = () => {
   // promise returns user location when it's determined
   return new Promise((resolve, reject) => {
@@ -18,7 +20,7 @@ exports.send = (coordsObj) => {
     // POST user's location to the server, which will make the API call
     var req = new XMLHttpRequest()
 
-    req.open('POST', '/location', true)
+    req.open('POST', 'location', true)
     req.setRequestHeader('Content-Type', 'application/json')
     req.send(JSON.stringify(coordsObj))
 
