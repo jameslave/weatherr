@@ -18,8 +18,12 @@ $settingsIcon.on('click', () => {
 
 // select units on page load
 $(document).ready(() => {
-  let tempPref = document.cookie.match(/temp=(f|c)/)[1] || 'f'
-  console.log($(`[data-units='${tempPref}']`))
+  let tempPref
+  try {
+    tempPref = document.cookie.match(/temp=(f|c)/)[1]
+  } catch (e) {
+    tempPref = 'f'
+  }
   $(`[data-units='${tempPref}']`).addClass('selected')
 })
 
