@@ -26,7 +26,7 @@ gulp.task('babel', () => {
 
 gulp.task('js', ['babel'], () => {
   return gulp.src('tmp/js/main.js')
-  .pipe(browserify())  
+  .pipe(browserify())
   .pipe(sourcemaps.init())
   .pipe(uglify())
   .pipe(sourcemaps.write())
