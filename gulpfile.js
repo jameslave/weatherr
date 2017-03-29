@@ -6,6 +6,7 @@ const clean = require('gulp-clean')
 const cleancss = require('gulp-clean-css')
 const imagemin = require('gulp-imagemin')
 const sass = require('gulp-sass')
+const sourcemaps = require('gulp-sourcemaps')
 const uglify = require('gulp-uglify')
 
 const paths = {
@@ -25,8 +26,10 @@ gulp.task('babel', () => {
 
 gulp.task('js', ['babel'], () => {
   return gulp.src('tmp/js/main.js')
-  .pipe(browserify())
+  .pipe(browserify())  
+  .pipe(sourcemaps.init())
   .pipe(uglify())
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('dist'))
 })
 
